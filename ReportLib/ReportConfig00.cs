@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
 
 namespace ReportLib
 {
@@ -22,23 +23,24 @@ namespace ReportLib
             Rpt1a.DataSources.Clear();
 
 
-            if (UserDataset != null)
-            {
-                var list3 = (List<string>)UserDataset;
-                Rpt1a.SetParameters(new ReportParameter("ParmHeader1", list3[0].RptEntName));
-                Rpt1a.SetParameters(new ReportParameter("ParmFooter1", list3[0].RptFooter1));
-            }
-
             switch (Rpt1a.DisplayName.Trim())
             {
-                //case "RptSetup.RptLocInfo1": Rpt1a = RptSetup_RptLocInfo1(Rpt1a, RptDataSet, RptDataSet2, UserDataset); break;
-                //case "RptSetup.RptAccInfo1": Rpt1a = RptSetup_RptAccInfo1(Rpt1a, RptDataSet, RptDataSet2, UserDataset); break;
                 case "RptSetup.RptResInfo1": Rpt1a = RptSetup_RptResInfo1(Rpt1a, RptDataSet, RptDataSet2, UserDataset); break;
             }
             return Rpt1a;
-
-
         }
+
+        private static LocalReport RptSetup_RptResInfo1(LocalReport Rpt1a, object RptDataSet, object RptDataSet2, object UserDataset)
+        {
+            var list0 = ((List<RptEntityGen.RptResourceInfo>)RptDataSet);
+
+            Rpt1a.DataSources.Add(new ReportDataSource("RptDataSet1", list0));
+            Rpt1a.SetParameters(new ReportParameter("ParamHeader1", "Sales Report"));
+            Rpt1a.SetParameters(new ReportParameter("ParamHeader2", "Report Presented by Moon"));
+
+            return Rpt1a;
+        }
+
 
     }
 }
