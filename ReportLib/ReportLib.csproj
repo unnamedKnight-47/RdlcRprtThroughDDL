@@ -87,6 +87,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Rdlc2FilePrint.cs" />
     <Compile Include="ReportConfig00.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -95,6 +96,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptSetup\SalesRptInfo1.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Models.RptEntityGen+RptResourceInfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

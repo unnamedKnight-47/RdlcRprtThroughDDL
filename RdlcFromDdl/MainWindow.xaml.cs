@@ -51,9 +51,9 @@ namespace RdlcFromDdl
             list1 = list2r;
 
             /* just trying to make the GetLocalReport function work */
-            string RptTitle = "Sales Report";
+            string RptTitle = "Sales Report by Moon";
             var list3 = new List<EntityGen.ReportGeneralInfo>();
-            list3.Add(new EntityGen.ReportGeneralInfo() { RptEntName = "", RptFooter1 = "Footer1", RptHeader1 = RptTitle });
+            list3.Add(new EntityGen.ReportGeneralInfo() { RptEntName = "Test Report", RptFooter1 = "Footer1", RptHeader1 = RptTitle });
 
             string WindowTitle1 = RptTitle;
 
@@ -61,7 +61,8 @@ namespace RdlcFromDdl
             LocalReport rpt1 = ReportConfig00.GetLocalReport(ReportName1, list1, RptTitle, list3);
 
 
-            string RptdisplayMode = "PDF";
+            string RptDisplayMode = "PDF";
+            WpfProcAccess.ViewReportInWindow(rpt1: rpt1, WindowTitle1: WindowTitle1, RptDisplayMode: RptDisplayMode, RptZoomMode: ZoomMode.FullPage);
 
         }
 
