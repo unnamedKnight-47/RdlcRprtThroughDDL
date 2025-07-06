@@ -35,8 +35,8 @@ namespace ReportLib
             var list0 = ((List<RptEntityGen.RptResourceInfo>)RptDataSet);
 
             Rpt1a.DataSources.Add(new ReportDataSource("RptDataSet1", list0));
-            Rpt1a.SetParameters(new ReportParameter("ParamHeader1", "Sales Report"));
-            Rpt1a.SetParameters(new ReportParameter("ParamHeader2", "Report Presented by Moon"));
+            //Rpt1a.SetParameters(new ReportParameter("ParamHeader1", "Sales Report"));
+            //Rpt1a.SetParameters(new ReportParameter("ParamHeader2", "Report Presented by Moon"));
 
             return Rpt1a;
         }

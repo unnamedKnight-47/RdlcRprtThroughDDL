@@ -51,15 +51,17 @@ namespace RdlcFromDdl
             list1 = list2r;
 
             /* just trying to make the GetLocalReport function work */
-            object RptTitle = "Sales Report";
-            var list3 = new object();
+            string RptTitle = "Sales Report";
+            var list3 = new List<EntityGen.ReportGeneralInfo>();
+            list3.Add(new EntityGen.ReportGeneralInfo() { RptEntName = "", RptFooter1 = "Footer1", RptHeader1 = RptTitle });
 
-            string WindowTitle1 = (string)RptTitle;
-            string RptdisplayMode = "PDF";
+            string WindowTitle1 = RptTitle;
 
             string ReportName1 = "RptSetup.SalesRptInfo1";
             LocalReport rpt1 = ReportConfig00.GetLocalReport(ReportName1, list1, RptTitle, list3);
-            
+
+
+            string RptdisplayMode = "PDF";
 
         }
 
