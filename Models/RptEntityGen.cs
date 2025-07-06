@@ -11,6 +11,9 @@ namespace Models
         public class RptResourceInfo
         {
             public int Slnum { get; set; }
+
+            public int InvoiceNumber { get; set; }
+
             public DateTime SaleDate { get; set; }
             public string CustomerName { get; set; }
             public string Product { get; set; }
@@ -18,9 +21,10 @@ namespace Models
             public decimal UnitPrice { get; set; }
             public decimal Discount { get; set; }
 
-            public RptResourceInfo(int _slnum, string customerName, string product, DateTime saleDate, int quantity, decimal unitPrice, decimal discount)
+            public RptResourceInfo(int _slnum, int invoiceNumber,string customerName, string product, DateTime saleDate, int quantity, decimal unitPrice, decimal discount)
             {
                 Slnum = _slnum;
+                InvoiceNumber = invoiceNumber;
                 CustomerName = customerName;
                 Product = product;
                 SaleDate = saleDate;

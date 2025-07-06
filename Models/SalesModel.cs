@@ -8,6 +8,7 @@ namespace Models
 {
     public class SalesModel
     {
+        public int InvoiceNumber { get; set; }
         public DateTime SaleDate { get; set; }
         public string CustomerName { get; set; }
         public string Product { get; set; }
